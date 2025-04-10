@@ -15,7 +15,9 @@ typedef struct ts_hashmap_t {
    ts_entry_t **table;
    int numOps;
    int capacity;
-   int size;
+   int size; // just for bonus questions?
+   pthread_spinlock_t *speen; // support locks (one per)(that seemed the simplest)
+   pthread_spinlock_t numOpsLock;
 } ts_hashmap_t;
 
 // function declarations
